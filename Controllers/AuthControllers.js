@@ -131,7 +131,7 @@ const forgotPassword = async (req, res) => {
       from: process.env.EMAIL,
       to: email,
       subject: "Password Update Verification",
-      text: `http://localhost:5000/auth/reset-password/${user._id}/${token}`,
+      text: `${process.env.HOST}/auth/reset-password/${user._id}/${token}`,
     };
 
     // Send email
