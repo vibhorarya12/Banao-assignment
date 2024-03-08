@@ -1,7 +1,4 @@
 # ▶️ API Documentation
-
-This repository contains APIs for user authentication.
-
 ## hosted url : https://banao-assignment.onrender.com
 ⚠️Note: As the Node.js server is deployed on a Render hosting service, utilizing a free service plan, it is subject to inactivity periods. During prolonged inactivity, the server may become inactive and require a restart upon hitting an API endpoint. Consequently, the initial response time upon accessing the API for the first time may be extended, potentially up to 30 seconds, as the server undergoes the restart process on Render's platform. Your patience and understanding during this initialization period are greatly appreciated
 
