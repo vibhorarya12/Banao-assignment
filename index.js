@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const authRoutes = require("./Routes/Auth"); // Importing authentication routes
+const PostingRoutes = require("./Routes/Posting")
 const PORT = process.env.PORT || 5000; // Setting the port number
 
 // Enabling CORS
@@ -39,6 +40,7 @@ app.get("/", (req, res) => {
 
 // Using authentication routes
 app.use('/auth', authRoutes);
+app.use('/post',PostingRoutes);
 
 // Starting the server
 const server = app.listen(PORT, () => {

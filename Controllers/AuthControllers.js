@@ -97,6 +97,7 @@ const loginUser = async (req, res) => {
       authToken,
       name: user.name,
       email: user.email,
+      userId : user._id
     });
   } catch (error) {
     console.error(error.message);
