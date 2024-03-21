@@ -6,7 +6,7 @@ dotenv.config();
 
 // Setting JWT secret key
 const JWT_SECRET = process.env.JWT_SECRET;
-const AuthorizeUser = (req, res, next) => {
+const JwtAuthorizer = (req, res, next) => {
   const token = req.header("auth-token");
   if (!token) {
     return res
@@ -19,11 +19,11 @@ const AuthorizeUser = (req, res, next) => {
     req.user = data.user;
     next();
   } catch (error) {
-    console.error("Error verifying token:", error);
+    // console.error("Error verifying token:", error);
     return res
       .status(401)
       .send({ error: "Please authenticate using a valid token" });
   }
 };
 
-module.exports = AuthorizeUser;
+module.exports = JwtAuthorizer;

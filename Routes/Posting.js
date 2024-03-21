@@ -7,15 +7,17 @@ const {
   likePost,
   addComment,
 } = require("../Controllers/PostControllers");
-const AuthorizeUser = require("../Middleware/Authorize");
+
+// middleware for validating requests through JWT token //
+const JwtAuthorizer = require("../Middleware/JwtAuth");
 
 const router = express.Router();
 
-router.post("/create-post", AuthorizeUser, createPost);
-router.get("/all-post",AuthorizeUser, getAllPostsForUser);
-router.put("/update-post",AuthorizeUser, updatePost);
-router.delete("/delete-post",AuthorizeUser, deletePost);
-router.post("/like-unlike-post", AuthorizeUser , likePost);
-router.post("/comment", AuthorizeUser, addComment);
+router.post("/create-post", JwtAuthorizer, createPost);
+router.get("/all-post", JwtAuthorizer, getAllPostsForUser);
+router.put("/update-post", JwtAuthorizer, updatePost);
+router.delete("/delete-post", JwtAuthorizer, deletePost);
+router.post("/like-unlike-post", JwtAuthorizer, likePost);
+router.post("/comment", JwtAuthorizer, addComment);
 
 module.exports = router;
